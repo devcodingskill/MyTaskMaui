@@ -11,15 +11,16 @@
 
         <Image Grid.ColumnSpan="2"
                Source="logo_tranparent.png"
-               BackgroundColor="Transparent" 
+               BackgroundColor="Transparent"
                HeightRequest="120"
-               Aspect="AspectFit"/>
+               Aspect="AspectFit" />
         <Entry Grid.Row="1"
                Placeholder="Enter task" />
         <Button Grid.Row="1"
                 Grid.Column="1"
                 Text="Add" />
-        <CollectionView Grid.Row="2" Grid.ColumnSpan="2">
+        <CollectionView Grid.Row="2"
+                        Grid.ColumnSpan="2">
             <CollectionView.ItemsSource>
                 <x:Array Type="{x:Type x:String}">
                     <x:String>Apple</x:String>
@@ -39,15 +40,11 @@
                             <Frame>
                                 <Label Text="{Binding .}"
                                        FontSize="Medium" />
-
                             </Frame>
                         </Grid>
                     </SwipeView>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-
-
-
     </Grid>
 </ContentPage>
