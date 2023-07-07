@@ -3,10 +3,51 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MyTaskMaui.Views.MyTaskPage"
              Title="MyTaskPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <Grid RowDefinitions="100, Auto, *"
+          ColumnDefinitions="0.75*,0.25*"
+          Padding="10"
+          ColumnSpacing="10"
+          RowSpacing="10">
+
+        <Image Grid.ColumnSpan="2"
+               Source="logo_tranparent.png"
+               BackgroundColor="Transparent" 
+               HeightRequest="120"
+               Aspect="AspectFit"/>
+        <Entry Grid.Row="1"
+               Placeholder="Enter task" />
+        <Button Grid.Row="1"
+                Grid.Column="1"
+                Text="Add" />
+        <CollectionView Grid.Row="2" Grid.ColumnSpan="2">
+            <CollectionView.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Apple</x:String>
+                    <x:String>Orange</x:String>
+                    <x:String>Bananas</x:String>
+                    <x:String>Mango</x:String>
+                </x:Array>
+            </CollectionView.ItemsSource>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <SwipeView>
+                        <SwipeView.RightItems>
+                            <SwipeItem Text="Delete"
+                                       BackgroundColor="Red" />
+                        </SwipeView.RightItems>
+                        <Grid Padding="0,5">
+                            <Frame>
+                                <Label Text="{Binding .}"
+                                       FontSize="Medium" />
+
+                            </Frame>
+                        </Grid>
+                    </SwipeView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+
+
+    </Grid>
 </ContentPage>
