@@ -17,3 +17,5 @@ Do to list
                 </x:Array>
             </CollectionView.ItemsSource>
 ```
+### Problem 
+Link https://stackoverflow.com/questions/73417068/relativesource-in-maui-control-not-bound

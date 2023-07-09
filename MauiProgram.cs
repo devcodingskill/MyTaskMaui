@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
+using MyTaskMaui.ViewModels;
+using MyTaskMaui.Views;
 
 namespace MyTaskMaui;
 
@@ -18,7 +20,8 @@ public static class MauiProgram
 #if DEBUG
 		builder.Logging.AddDebug();
 #endif
-
+		builder.Services.AddSingleton<MyTaskViewModel>();
+		builder.Services.AddSingleton<MyTaskPage>();
 		return builder.Build();
 	}
 }
