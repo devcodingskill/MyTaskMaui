@@ -43,12 +43,19 @@
                                        BackgroundColor="Red"
                                        Command="{Binding BindingContext.DeletedCommand, Source={x:Reference mypage}}"
                                        CommandParameter="{Binding .}"/>
+                            <SwipeItem Text="Done"
+                                       BackgroundColor="Green" />
                         </SwipeView.RightItems>
                         <Grid Padding="0,5">
                             <Frame>
                                 <Label Text="{Binding .}"
                                        FontSize="Medium" />
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding BindingContext.OpenTaskDetailCommand, Source={x:Reference mypage}}"
+                                                          CommandParameter="{Binding .}"/>
+                                </Frame.GestureRecognizers>
                             </Frame>
+                            
                         </Grid>
                     </SwipeView>
                 </DataTemplate>

@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using MyTaskMaui.Views;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -35,8 +36,11 @@ namespace MyTaskMaui.ViewModels
         {
             if (Item.Contains(item))
                 Item.Remove(item);
-
-
+        }
+        [RelayCommand]
+        async Task OpenTaskDetail(string item) 
+        {
+            await Shell.Current.GoToAsync($"{nameof(TaskDetailPage)}?parameter={item}");
         }
     }
 }

@@ -22,6 +22,10 @@ public static class MauiProgram
 #endif
 		builder.Services.AddSingleton<MyTaskViewModel>();
 		builder.Services.AddSingleton<MyTaskPage>();
-		return builder.Build();
+
+        builder.Services.AddSingleton<TaskDetailViewModel>();
+        builder.Services.AddSingleton<TaskDetailPage>();
+
+        return builder.Build();
 	}
 }
